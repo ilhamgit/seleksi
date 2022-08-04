@@ -8,14 +8,7 @@ cat /home/master/my_password.txt | sudo docker login --username 455417 --passwor
 sudo docker tag ubuntu 455417/devops:jenkins
 sudo docker push 455417/devops:jenkins
 
-
-'''
-      }
-    }
-
-    stage('pick') {
-      steps {
-        sh '''echo "apiVersion: apps/v1
+echo "apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkinstest
@@ -57,16 +50,11 @@ spec:
     targetPort: 80
   selector:
     app: tes
-  type: ClusterIP" | tee bisa.yaml
+  type: ClusterIP" | tee bebas.yaml
 
+kubectl apply -f bebas.yaml
 
 '''
-      }
-    }
-
-    stage('last') {
-      steps {
-        sh 'kubectl apply -f bisa.yaml'
       }
     }
 

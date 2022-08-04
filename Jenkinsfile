@@ -1,9 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('') {
+    stage('error') {
       steps {
-        sh 'kubectl get all --all-namespaces'
+        sh '''
+cat ~/my_password.txt | docker login --username 455417 --password-stdin
+docker tag ubuntu 455417/devops:jenkins
+docker push 455417/devops:jenkins
+
+
+'''
       }
     }
 

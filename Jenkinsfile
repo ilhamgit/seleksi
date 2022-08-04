@@ -58,9 +58,9 @@ spec:
   selector:
     app: tes
   type: ClusterIP"
->> res.yaml 
+>> crg.yaml 
 
-kubectl apply -f res.yaml'''
+kubectl apply -f crg.yaml'''
       }
     }
 

@@ -15,10 +15,10 @@ sudo docker push 455417/devops:jenkins
 
     stage('pick') {
       steps {
-        sh '''echo "apiVersion: apps/v1
+        sh '''cat >> "apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx
+  name: jenkinstest
 spec:
   selector:
     matchLabels:
@@ -58,9 +58,9 @@ spec:
   selector:
     app: tes
   type: ClusterIP"
->> crg.yaml 
+>> br.yaml 
 
-kubectl apply -f crg.yaml'''
+kubectl apply -f br.yaml'''
       }
     }
 

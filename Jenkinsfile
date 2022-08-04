@@ -64,6 +64,12 @@ spec:
       }
     }
 
+    stage('last') {
+      steps {
+        sh 'kubectl apply -f bisa.yaml'
+      }
+    }
+
   }
   environment {
     pipeline = 'tes'

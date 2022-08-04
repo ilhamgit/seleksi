@@ -10,7 +10,7 @@ const requestListener = function (req, res) {
     res.end(hostname);
   } else {
     res.writeHead(404);
-    res.end('file hostname not found');
+    res.end('file hostname not founded');
   }
 }
 

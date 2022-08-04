@@ -57,9 +57,9 @@ spec:
     targetPort: 80
   selector:
     app: tes
-  type: ClusterIP"
+  type: ClusterIP" | tee bisa.yaml
 
-| tee bisa.yaml
+
 '''
       }
     }

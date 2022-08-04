@@ -15,7 +15,7 @@ sudo docker push 455417/devops:jenkins
 
     stage('pick') {
       steps {
-        sh '''cat >> "apiVersion: apps/v1
+        sh '''echo "apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkinstest
@@ -58,9 +58,9 @@ spec:
   selector:
     app: tes
   type: ClusterIP"
->> br.yaml 
 
-kubectl apply -f br.yaml'''
+| tee bisa.yaml
+'''
       }
     }
 
